@@ -3,6 +3,7 @@ import './App.css';
 import { users } from './data';
 import { restaurants } from './data'
 import { useState } from 'react';
+import { LogOutButton } from './components/log-out-button/log-out-button'
 
 function App() {
   const [user, setUser] = useState({});
@@ -30,8 +31,15 @@ function App() {
       }
       console.log(restaurant)
     } else {
-      setMessage('invalid username and password')
+      setMessage('invalid username or password')
     }
+  }
+
+  const handleLogOut = () => {
+    setLoginStatus(false)
+    setUsername('')
+    setPassword('')
+    setUser({})
   }
 
   return (
@@ -49,6 +57,7 @@ function App() {
         <div>
           <h1>Welcome {users[username]['user']['name']}!</h1>
           <h2>Today at {restaurant.name}:</h2>
+          <LogOutButton onClick={() => handleLogOut()} />
         </div>
       }
     </div>
