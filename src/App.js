@@ -3,7 +3,7 @@ import './App.css';
 import { users } from './data';
 import { restaurants } from './data'
 import { useState } from 'react';
-import { LogOutButton } from './components/log-out-button/log-out-button'
+import { LogOutButton } from './components/LogOutButton/log-out-button'
 
 function App() {
   const [user, setUser] = useState({});
